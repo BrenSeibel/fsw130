@@ -5,7 +5,7 @@ class Navbar extends Component {
     static contextType = UserContext
 
     render() {
-        const username = this.context
+        const username = "username"//this.context
         return (
             <header>
                 <p>Welcome, {username}!</p>

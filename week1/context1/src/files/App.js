@@ -1,18 +1,18 @@
 import React from "react"
 import Navbar from "./navbar"
 import UserContext from "./userContext"
+import Main from "./main"
 
 class App extends React.Component {
     static contextType = UserContext
 
-    render(){
-        const username = this.context 
+    render(){ 
+        const username = "username"//this.context 
         return (
             <div>
                 <Navbar />
-                <Main>
-                    <p className = "main">No new notifications, {username}! </p>
-                </Main>
+                <Main className = "main" username = {username} />
+                    
             </div>
         )
     }
