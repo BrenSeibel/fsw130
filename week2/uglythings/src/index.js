@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 //import './index.css';
 import App from './App';
 //import * as serviceWorker from './serviceWorker';
-import UserContext from "./userContext"
+import {UserContextProvider} from "./userContext"
 
 ReactDOM.render(
-  <UserContext.Provider value = {"brenda007"}>
+  <UserContextProvider value = {"brenda007"}>
     <App />
-  </UserContext.Provider>,
+  </UserContextProvider>,
   document.getElementById('root')
 );
 
