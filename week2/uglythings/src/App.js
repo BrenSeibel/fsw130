@@ -5,31 +5,54 @@ import Header from "./Header";
 import {UserContextConsumer} from "./userContext"
 
 class App extends React.Component {
-  state = {
-    newUsername: ""
-  }
-
-  handleChange = (e) => {
-    const {name, value} = e.target
-    this.ListeningStateChangedEvent({[name]: value})
-  }
-
+ 
   render () {
     return (
       <div>
         <Header />
           <UserContextConsumer>
-            {({username, changeUsername}) => (
+            {({title, submit, handleChange, description, imgurl, purple}) => (
               <main>
-                <p className = "main"> No new notifications, {username}!</p>
+                <p className = "main"> No new notifications, {title}!</p>
                 <input 
                     type = "text"
-                    name = "newUsername"
-                    value = {this.state.newUsername}
-                    onChange = {this.habldeChange}
+                    name = "title"
+                    value = {title}
+                    onChange = {handleChange}
                 />
-                <button onClick = {() => changeUsername(this.state.newUsername)}
-                >Change Username</button>
+                 <input 
+                    type = "text"
+                    name = "description"
+                    value = {description}
+                    onChange = {handleChange}
+                />
+                 <input 
+                    type = "text"
+                    name = "imgurl"
+                    value = {imgurl}
+                    onChange = {handleChange}
+                />
+                <button onClick = {() => submit()}
+                >Change title</button>
+                <div style={{display: "flex"}}>
+                  {purple.map(thing => {
+                    console.log(thing)
+                    return (
+                      <div style={{border: "red solid 5px"}}>
+                      <h1>{thing.title}</h1>
+                      <p>{thing.description},</p>
+                      <img src = {thing.imgurl}  alt =""></img>
+                      <section>
+                        comments:
+                        {thing.commentsArray.map(comment => {
+
+                        return(<div>{comment.text}</div>)
+                        })}
+                      </section>
+                      </div>
+                    )
+                  })}
+                </div>
               </main>
             )}
           </UserContextConsumer>
