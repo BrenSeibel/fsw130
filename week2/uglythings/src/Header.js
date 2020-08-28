@@ -6,7 +6,7 @@ function Header() {
         <header>
             <UserContextConsumer>
                 {({username}) => (
-                    <div><p>Welcome, {username}!</p><img src = "https://images.unsplash.com/photo-1564398042875-dddb3c722039?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60" alt =""></img></div>
+                    <div><p>Welcome, {username}!</p></div>
                 )}
             </UserContextConsumer>
         </header>
