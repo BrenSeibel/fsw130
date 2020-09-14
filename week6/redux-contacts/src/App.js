@@ -15,8 +15,8 @@ function App(props) {
         return (
             <div>
                 <h1>CONTACT LIST</h1>
-                <button>-</button>
-                <button>+</button>
+                {/* <button>-</button>
+                <button>+</button> */}
                 <Form
                         collection={addContact}
                         btnName="Add Contacts"
